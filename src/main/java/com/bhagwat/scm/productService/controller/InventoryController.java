@@ -1,16 +1,10 @@
 package com.bhagwat.scm.productService.controller;
 
-import com.bhagwat.scm.productService.dto.AllocateInventoryCommand;
-import com.bhagwat.scm.productService.dto.AllocateInventoryRequest;
-import com.bhagwat.scm.productService.dto.CreateInventoryCommand;
-import com.bhagwat.scm.productService.dto.CreateInventoryRequest;
+import com.bhagwat.scm.productService.dto.*;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -43,6 +37,21 @@ public class InventoryController {
                 request.getOrderQuantity()
         ));
         return ResponseEntity.ok("Inventory Allocated!");
+    }
+
+
+    public InventoryController(CommandGateway commandGateway) {
+        this.commandGateway = commandGateway;
+    }
+
+    @PostMapping("/publish")
+    public void publishInventory(@RequestParam String inventoryId, @RequestParam String sellerId) {
+        commandGateway.send(new PublishInventoryCommand(inventoryId, sellerId));
+    }
+
+    @PostMapping("/notify")
+    public void notifyCommunity(@RequestParam String sellerId, @RequestParam String message) {
+        commandGateway.send(new NotifyCommunityCommand(sellerId, message));
     }
 }
 

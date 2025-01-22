@@ -18,6 +18,9 @@ public class InventoryAggregate {
     private String inventoryId;
     private Integer quantity;
     private Integer allocatedQuantity;
+    private String sellerId;
+    private String skuId;
+    private String batchId;
 
     public InventoryAggregate() {
         // Required by Axon
@@ -39,6 +42,10 @@ public class InventoryAggregate {
         this.inventoryId = event.getInventoryId();
         this.quantity = event.getQuantity();
         this.allocatedQuantity = 0;
+       /* private String sellerId;
+        private String skuId;
+        private int quantity;
+        private String batchId;*/
     }
 
     @CommandHandler
