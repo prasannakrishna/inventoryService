@@ -1,0 +1,145 @@
+PackingConfiguration JSON
+{
+  "packConfigName": "Standard Box Pack",
+  "tagVolume": 1.2,
+  "eachVolume": 0.3,
+  "trackingLevel1": "EACH",
+  "trackingLevel2": "BOX",
+  "trackingLevel3": "PALLET",
+  "trackingLevel1To2Ratio": 10,
+  "trackingLevel2To3Ratio": 50
+}
+
+SKU JSON
+{
+  "skuName": "iPhone 15 Pro - 128GB",
+  "productGroup": "Smartphones",
+  "length": 14.7,
+  "width": 7.2,
+  "height": 0.8,
+  "weight": 0.19,
+  "isHazardous": false,
+  "trackingLevel": "EACH",
+  "isSellerSKU": true,
+  "packingConfiguration": {
+    "packConfigName": "Standard Box Pack",
+    "tagVolume": 1.2,
+    "eachVolume": 0.3,
+    "trackingLevel1": "EACH",
+    "trackingLevel2": "BOX",
+    "trackingLevel3": "PALLET",
+    "trackingLevel1To2Ratio": 10,
+    "trackingLevel2To3Ratio": 50
+  }
+}
+
+
+ Product JSON
+ {
+   "productId": "P12345",
+   "sellerId": "S56789",
+   "productName": "iPhone 15 Pro",
+   "brand": "Apple",
+   "description": "Latest Apple iPhone 15 Pro smartphone",
+   "hashKeys": {
+     "color": "black",
+     "memory": "128GB"
+   },
+   "isSeasonal": false,
+   "price": 125000,
+   "mrpPrice": 135000,
+   "isInStock": true,
+   "shippingTrackingLevel": "BOX",
+   "frequency": "DAILY",
+   "storeTrackingLevel": "EACH",
+   "captureExpiryDuringCreateInventory": true,
+   "sku": {
+     "skuName": "iPhone 15 Pro - 128GB",
+     "productGroup": "Smartphones",
+     "length": 14.7,
+     "width": 7.2,
+     "height": 0.8,
+     "weight": 0.19,
+     "isHazardous": false,
+     "trackingLevel": "EACH",
+     "isSellerSKU": true,
+     "packingConfiguration": {
+       "packConfigName": "Standard Box Pack",
+       "tagVolume": 1.2,
+       "eachVolume": 0.3,
+       "trackingLevel1": "EACH",
+       "trackingLevel2": "BOX",
+       "trackingLevel3": "PALLET",
+       "trackingLevel1To2Ratio": 10,
+       "trackingLevel2To3Ratio": 50
+     }
+   }
+ }
+
+
+Inventory JSON
+{
+  "locationId": "A1-R2-L3-B4",
+  "quantity": 100,
+  "allocatedQuantity": 20,
+  "pricePerUnit": 125000,
+  "currency": "INR",
+  "unitTrackingLevel": "EACH",
+  "containerId": "CNT-0001",
+  "shipmentId": "SHIP-20230701",
+  "carrierId": "CARR-123",
+  "siteId": "SITE-001",
+  "orderId": "ORD-56789",
+  "tagId": "TAG-9876",
+  "lotNumber": "LOT-12345",
+  "batchNumber": "BATCH-98765",
+  "serialNumber": "SER-45678",
+  "receiptId": "RCPT-1122",
+  "origin": "India",
+  "inventoryCode": "INV-APPLE-15PRO-001",
+  "inventoryType": "FINISHED_GOODS",
+  "inventoryStatus": "AVAILABLE",
+  "expiryDate": "2026-12-31",
+  "product": {
+    "productId": "P12345",
+    "sellerId": "S56789",
+    "productName": "iPhone 15 Pro",
+    "brand": "Apple",
+    "description": "Latest Apple iPhone 15 Pro smartphone",
+    "hashKeys": {
+      "color": "black",
+      "memory": "128GB"
+    },
+    "isSeasonal": false,
+    "price": 125000,
+    "mrpPrice": 135000,
+    "isInStock": true,
+    "shippingTrackingLevel": "BOX",
+    "frequency": "DAILY",
+    "storeTrackingLevel": "EACH",
+    "captureExpiryDuringCreateInventory": true,
+    "sku": {
+      "skuName": "iPhone 15 Pro - 128GB",
+      "productGroup": "Smartphones",
+      "length": 14.7,
+      "width": 7.2,
+      "height": 0.8,
+      "weight": 0.19,
+      "isHazardous": false,
+      "trackingLevel": "EACH",
+      "isSellerSKU": true,
+      "packingConfiguration": {
+        "packConfigName": "Standard Box Pack",
+        "tagVolume": 1.2,
+        "eachVolume": 0.3,
+        "trackingLevel1": "EACH",
+        "trackingLevel2": "BOX",
+        "trackingLevel3": "PALLET",
+        "trackingLevel1To2Ratio": 10,
+        "trackingLevel2To3Ratio": 50
+      }
+    }
+  }
+}
+
+

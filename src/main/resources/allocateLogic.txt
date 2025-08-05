@@ -1,0 +1,43 @@
+allocate customer order
+check if product in stock is true
+get inventory for that product and make sure available qty is greater or equal to order qty
+find inventory available in store
+ create last mile delivery
+        find fleet get contract
+        get vehicle
+        create trip
+        assign trip to vehicle
+        update order status
+        deliver goods
+        update order
+
+find inventory available in warehouse
+    generate replenishments and create shipment
+    find carrier who does mid leg delivery
+    ship inventory to store
+        create last mile delivery trip
+        find last mile delivery partner
+        get vehicle
+            create trip
+            assign trip to vehicle
+            update order status
+            deliver goods
+            update order
+
+
+Coomunity buy
+find inventory available in seller location
+alocate the inventory
+create RTS
+Create TP 1 source to 1 destination or consolidate destination preffered
+create TS
+pick up post milestone
+update orders status
+deliver destination
+update order status
+payment and invoice
+
+
+
+
+
