@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class InventoryEventProducer {
-    private final KafkaTemplate<String, InventoryEvent> kafkaTemplate;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
     public void publishEvent(InventoryEvent event) {
         kafkaTemplate.send("inventory-events", event);

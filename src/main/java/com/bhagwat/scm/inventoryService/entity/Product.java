@@ -1,5 +1,6 @@
 package com.bhagwat.scm.inventoryService.entity;
 
+import com.bhagwat.scm.inventoryService.constant.CalendarUnit;
 import com.bhagwat.scm.inventoryService.constant.CountFrequency;
 import com.bhagwat.scm.inventoryService.constant.TrackingLevel;
 import jakarta.persistence.*;
@@ -52,6 +53,13 @@ public class Product {
     private double mRP_Price;
 
     private boolean is_in_stock;
+
+    private double communityPrice;
+    private double retailPrice;
+
+    // it will be used when seller directly sells goods to community without mediator
+    @Enumerated(EnumType.STRING)
+    private Set<CalendarUnit> allowed_subscription_type;
 
     private TrackingLevel shipping_tracking_level;
 

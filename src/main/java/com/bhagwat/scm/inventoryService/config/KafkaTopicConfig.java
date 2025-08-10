@@ -2,6 +2,7 @@ package com.bhagwat.scm.inventoryService.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
+@RefreshScope
 public class KafkaTopicConfig {
 
     // --- Inventory Topic Properties ---
@@ -26,6 +28,7 @@ public class KafkaTopicConfig {
 
 
     @Bean
+    @RefreshScope
     public NewTopic inventoryEventsTopic() {
         Map<String, String> configs = new HashMap<>();
         configs.put("retention.ms", inventoryTopicRetentionMs);

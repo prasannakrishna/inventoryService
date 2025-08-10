@@ -1,37 +1,46 @@
 PackingConfiguration JSON
 {
-  "packConfigName": "Standard Box Pack",
-  "tagVolume": 1.2,
-  "eachVolume": 0.3,
+  "packConfigName": "Standard Box Configuration",
+  "tagVolume": 100.5,
+  "eachVolume": 1.5,
   "trackingLevel1": "EACH",
-  "trackingLevel2": "BOX",
-  "trackingLevel3": "PALLET",
-  "trackingLevel1To2Ratio": 10,
-  "trackingLevel2To3Ratio": 50
+  "trackingLevel2": "PACK",
+  "trackingRatio1To2": 10,
+  "trackingLevel3": "INNER_PACK",
+  "trackingRatio2To3": 5,
+  "trackingLevel4": "PALLET",
+  "trackingRatio3To4": 2,
+  "trackingLevel5": null,
+  "trackingRatio4To5": null,
+  "lowestUnitWeight": 0.15,
+  "tagVolumeWeight": 1.5,
+  "taggedAtLevel": "EACH",
+  "handlingUnitLevel": "PALLET"
 }
+
 
 SKU JSON
 {
-  "skuName": "iPhone 15 Pro - 128GB",
-  "productGroup": "Smartphones",
-  "length": 14.7,
-  "width": 7.2,
-  "height": 0.8,
-  "weight": 0.19,
+  "skuName": "EcoHarvest Arabica Coffee 250g",
+  "productGroup": "Coffee Beans",
+  "length": 15.0,
+  "width": 10.0,
+  "height": 5.0,
+  "weight": 0.25,
   "isHazardous": false,
   "trackingLevel": "EACH",
   "isSellerSKU": true,
-  "packingConfiguration": {
-    "packConfigName": "Standard Box Pack",
-    "tagVolume": 1.2,
-    "eachVolume": 0.3,
-    "trackingLevel1": "EACH",
-    "trackingLevel2": "BOX",
-    "trackingLevel3": "PALLET",
-    "trackingLevel1To2Ratio": 10,
-    "trackingLevel2To3Ratio": 50
-  }
+  "packConfigId": 1,
+  "sellerId": 201,
+  "uomWeight": "KILOGRAM",
+  "uomVolume": "CUBIC_METER",
+  "uomLength": null,
+  "uomDimension": "CENTIMETER",
+  "skuState": "POWDER",
+  "packing_tracking_level": "PACK",
+  "shipping_tracking_level": "EACH"
 }
+
 
 
  Product JSON

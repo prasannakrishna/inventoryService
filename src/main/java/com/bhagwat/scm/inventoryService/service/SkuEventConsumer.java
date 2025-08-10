@@ -88,7 +88,8 @@ public class SkuEventConsumer {
         skuDocument.setTrackingLevel(sku.getTrackingLevel());
         skuDocument.setIsSellerSKU(sku.getIsSellerSKU());
         skuDocument.setPackingConfiguration(packConfiguration1);
-        skuDocument.setSellerId(Long.valueOf(sku.getSellerId()));
+        if(sku.getSellerId() != null)
+            skuDocument.setSellerId(Long.valueOf(sku.getSellerId()));
         skuDocument.setUomWeight(sku.getUomWeight());
         skuDocument.setUomVolume(sku.getUomVolume());
         skuDocument.setUomLength(sku.getUomLength());

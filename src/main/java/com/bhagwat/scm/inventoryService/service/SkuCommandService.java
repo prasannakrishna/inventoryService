@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class SkuCommandService {
     private final SkuRepository skuRepository;
     private final PackingConfigurationRepository packConfigurationRepository;
-    private final KafkaTemplate<String, SkuCreatedEvent> kafkaTemplate;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
 
     /**

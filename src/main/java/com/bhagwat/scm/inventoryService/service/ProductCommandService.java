@@ -25,7 +25,7 @@ public class ProductCommandService {
     private final ProductRepository productRepository;
     private final SkuRepository skuRepository;
     private final PackingConfigurationRepository packConfigRepository;
-    private final ProductMapper productMapper;
+    //private final ProductMapper productMapper;
     private final KafkaTemplate<String, Object> kafkaTemplate;
 
     public Product createProduct(ProductDTO productDto) {

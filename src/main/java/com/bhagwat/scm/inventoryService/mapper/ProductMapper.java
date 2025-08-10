@@ -5,7 +5,9 @@ import com.bhagwat.scm.inventoryService.entity.PackConfiguration;
 import com.bhagwat.scm.inventoryService.entity.Product;
 import com.bhagwat.scm.inventoryService.entity.ProductDocument;
 import com.bhagwat.scm.inventoryService.entity.SKU;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class ProductMapper {
 
     // Map Request DTO -> Entity
@@ -45,7 +47,8 @@ public class ProductMapper {
             doc.setSkuIsHazardous(sku.getIsHazardous());
             doc.setSkuTrackingLevel(sku.getTrackingLevel());
             doc.setSkuIsSellerSKU(sku.getIsSellerSKU());
-            doc.setSkuSellerPartyId(Long.valueOf(sku.getSellerId()));
+            if(sku.getSellerId() != null)
+                doc.setSkuSellerPartyId(Long.valueOf(sku.getSellerId()));
             doc.setSkuUomWeight(sku.getUomWeight());
             doc.setSkuUomVolume(sku.getUomVolume());
             doc.setSkuUomLength(sku.getUomLength());

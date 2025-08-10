@@ -123,4 +123,6 @@ public class Inventory {
         FINISHED_GOODS, RAW_MATERIAL, WORK_IN_PROGRESS, SUPPLIES, PACKAGING, ASSET
         // Add more types relevant to your business
     }
+
+    private boolean reserved_for_community_orders;
 }

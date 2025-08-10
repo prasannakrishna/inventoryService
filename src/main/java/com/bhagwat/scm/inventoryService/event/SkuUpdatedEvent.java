@@ -1,7 +1,5 @@
 package com.bhagwat.scm.inventoryService.event;
 
-import com.bhagwat.scm.inventoryService.dto.PackingConfigurationDTO;
-import com.bhagwat.scm.inventoryService.dto.SkuDTO;
 import com.bhagwat.scm.inventoryService.entity.PackConfiguration;
 import com.bhagwat.scm.inventoryService.entity.SKU;
 import lombok.Data;
