@@ -44,6 +44,7 @@ public class ProductDTO {
     private String description;
 
     // Correctly defined as a Set of Strings to match the entity
+    @Size(max = 7, message = "The hashKeys set cannot contain more than 7 elements.")
     private Set<String> hashKeys;
 
     private boolean isSeasonal;
