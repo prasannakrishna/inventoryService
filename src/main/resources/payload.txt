@@ -46,26 +46,24 @@ SKU JSON
  Product JSON
 
  {
-   "productId": "PROD-98765",
+   "productId": "JAGGERY-B",
    "sellerId": "SELLER-1122",
-   "skuId": 10,
-   "productName": "Premium Dark Chocolate",
+   "skuId": 12,
+   "productName": "Premium Jaggery",
    "brand": "Cocoa Bliss",
    "description": "Rich, smooth, and ethically sourced 70% dark chocolate with a hint of vanilla.",
    "hashKeys": [
-     "chocolate",
-     "dark",
-     "premium",
-     "cocoa",
-     "dessert"
+     "yellapur",
+     "organic",
+     "havyaka",
+     "sirsi",
+     "sweet"
    ],
-   "price": 4.99,
-   "mrpPrice": 6.49,
-   "communityPrice": 4.49,
-   "retailPrice": 5.99,
+   "price": 500,
+   "mrpPrice": 600,
+   "communityPrice": 300,
+   "retailPrice": 450,
    "allowedSubscriptionType": [
-     "DAY",
-     "WEEK",
      "MONTH"
    ],
    "shippingTrackingLevel": "EACH",
@@ -95,67 +93,34 @@ SKU JSON
 
 Inventory JSON
 {
-  "locationId": "A1-R2-L3-B4",
+  "sellerId": 12345,
+  "storeId": 67890,
+"skuId":13,
+  "ownerId": 54321,
+  "clientId": 98765,
+  "locationId": "WH1-Aisle-05-Bin-02",
   "quantity": 100,
-  "allocatedQuantity": 20,
-  "pricePerUnit": 125000,
+  "allocatedQuantity": 30,
+  "pricePerUnit": 19.99,
   "currency": "INR",
-  "unitTrackingLevel": "EACH",
-  "containerId": "CNT-0001",
-  "shipmentId": "SHIP-20230701",
-  "carrierId": "CARR-123",
-  "siteId": "SITE-001",
-  "orderId": "ORD-56789",
-  "tagId": "TAG-9876",
-  "lotNumber": "LOT-12345",
-  "batchNumber": "BATCH-98765",
-  "serialNumber": "SER-45678",
-  "receiptId": "RCPT-1122",
-  "origin": "India",
-  "inventoryCode": "INV-APPLE-15PRO-001",
+  "unitTrackingLevel": "BOX",
+  "containerId": "PALLET-P401-2",
+  "shipmentId": "SHIP-112233-23",
+  "carrierId": "CARRIER-A",
+  "siteId": "SITE-HQ",
+  "orderId": "PO-001-202",
+  "tagId": "TAG-GREEN-1",
+  "lotNumber": "L-XYZ-789-we2",
+  "batchNumber": "B-ABC-456-2w",
+  "serialNumber": "SN-123456789-we2",
+  "receiptId": "REC-998877-1",
+  "origin": "yellapur",
+  "inventoryCode": "CODE-A1",
   "inventoryType": "FINISHED_GOODS",
   "inventoryStatus": "AVAILABLE",
-  "expiryDate": "2026-12-31",
-  "product": {
-    "productId": "P12345",
-    "sellerId": "S56789",
-    "productName": "iPhone 15 Pro",
-    "brand": "Apple",
-    "description": "Latest Apple iPhone 15 Pro smartphone",
-    "hashKeys": {
-      "color": "black",
-      "memory": "128GB"
-    },
-    "isSeasonal": false,
-    "price": 125000,
-    "mrpPrice": 135000,
-    "isInStock": true,
-    "shippingTrackingLevel": "BOX",
-    "frequency": "DAILY",
-    "storeTrackingLevel": "EACH",
-    "captureExpiryDuringCreateInventory": true,
-    "sku": {
-      "skuName": "iPhone 15 Pro - 128GB",
-      "productGroup": "Smartphones",
-      "length": 14.7,
-      "width": 7.2,
-      "height": 0.8,
-      "weight": 0.19,
-      "isHazardous": false,
-      "trackingLevel": "EACH",
-      "isSellerSKU": true,
-      "packingConfiguration": {
-        "packConfigName": "Standard Box Pack",
-        "tagVolume": 1.2,
-        "eachVolume": 0.3,
-        "trackingLevel1": "EACH",
-        "trackingLevel2": "BOX",
-        "trackingLevel3": "PALLET",
-        "trackingLevel1To2Ratio": 10,
-        "trackingLevel2To3Ratio": 50
-      }
-    }
-  }
+  "expiryDate": "2024-12-31",
+  "productId": "JAGGERY-B"
 }
+
 
 

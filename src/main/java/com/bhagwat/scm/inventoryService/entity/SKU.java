@@ -4,6 +4,7 @@ import com.bhagwat.scm.inventoryService.constant.SkuState;
 import com.bhagwat.scm.inventoryService.constant.TrackingLevel;
 import com.bhagwat.scm.inventoryService.constant.UnitOfMeasure;
 import com.bhagwat.scm.inventoryService.converter.UnitOfMeasureConverter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class SKU {
 
     @Id

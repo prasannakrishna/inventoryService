@@ -1,6 +1,7 @@
 package com.bhagwat.scm.inventoryService.entity;
 
 import com.bhagwat.scm.inventoryService.constant.InventoryStatus;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import lombok.Getter;
@@ -20,6 +21,7 @@ import java.time.LocalDate; // For dates without time
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Builder // Added Builder
 public class Inventory {
 

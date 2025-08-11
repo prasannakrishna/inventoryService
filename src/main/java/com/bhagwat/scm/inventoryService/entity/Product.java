@@ -4,6 +4,7 @@ import com.bhagwat.scm.inventoryService.constant.CalendarUnit;
 import com.bhagwat.scm.inventoryService.constant.CountFrequency;
 import com.bhagwat.scm.inventoryService.constant.TrackingLevel;
 import com.bhagwat.scm.inventoryService.converter.TrackingLevelConverter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,6 +24,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Product {
     @Id
     @Column(name = "product_id", unique = true, nullable = false, length = 50)
