@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.example.inventory.repository.query")
+@EnableMongoRepositories(basePackages = "com.bhagwat.scm.inventoryService.repository")
 public class MongoConfig {
 
     @Value("${spring.data.mongodb.uri}")
