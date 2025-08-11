@@ -1,6 +1,6 @@
 package com.bhagwat.scm.inventoryService.dto;
 
-import com.bhagwat.scm.inventoryService.entity.PackConfiguration;
+import com.bhagwat.scm.inventoryService.entity.*;
 import lombok.Data;
 
 import java.time.Instant;
@@ -49,37 +49,9 @@ public class InventoryDocumentDto {
     private Instant lastCycleCountDate;
 
     // Denormalized Product Details
-    private String productName;
-    private String productBrand;
-    private String productDescription;
-    private Set<String> productHashKeys;
-    private boolean productIsSeasonal;
-    private double productPrice;
-    private double productMRP_Price;
-    private boolean productIs_in_stock;
-    private String productShippingTrackingLevel;
-    private String productFrequency;
-    private String productStoreTrackingLevel;
-    private boolean productCaptureExpiryDuringCreateInventory;
+   private Product product;
 
     // Denormalized SKU Details
-    private String skuName;
-    private String skuProductGroup;
-    private Double skuLength;
-    private Double skuWidth;
-    private Double skuHeight;
-    private Double skuWeight;
-    private Boolean skuIsHazardous;
-    private String skuTrackingLevel;
-    private Boolean skuIsSellerSKU;
-    private String skuUomWeight;
-    private String skuUomVolume;
-    private String skuUomLength;
-    private String skuUomDimension;
-    private String skuState;
-    private String skuPackingTrackingLevel;
-    private String skuShippingTrackingLevel;
-
-    // Denormalized PackConfiguration Details (from SKU)
-    private PackConfiguration packingConfiguration;
+   private SKU sku;
+   private PackConfiguration packConfiguration;
 }

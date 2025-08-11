@@ -44,45 +44,52 @@ SKU JSON
 
 
  Product JSON
+
  {
-   "productId": "P12345",
-   "sellerId": "S56789",
-   "productName": "iPhone 15 Pro",
-   "brand": "Apple",
-   "description": "Latest Apple iPhone 15 Pro smartphone",
-   "hashKeys": {
-     "color": "black",
-     "memory": "128GB"
-   },
-   "isSeasonal": false,
-   "price": 125000,
-   "mrpPrice": 135000,
-   "isInStock": true,
-   "shippingTrackingLevel": "BOX",
+   "productId": "PROD-98765",
+   "sellerId": "SELLER-1122",
+   "skuId": 10,
+   "productName": "Premium Dark Chocolate",
+   "brand": "Cocoa Bliss",
+   "description": "Rich, smooth, and ethically sourced 70% dark chocolate with a hint of vanilla.",
+   "hashKeys": [
+     "chocolate",
+     "dark",
+     "premium",
+     "cocoa",
+     "dessert"
+   ],
+   "price": 4.99,
+   "mrpPrice": 6.49,
+   "communityPrice": 4.49,
+   "retailPrice": 5.99,
+   "allowedSubscriptionType": [
+     "DAY",
+     "WEEK",
+     "MONTH"
+   ],
+   "shippingTrackingLevel": "EACH",
    "frequency": "DAILY",
    "storeTrackingLevel": "EACH",
    "captureExpiryDuringCreateInventory": true,
-   "sku": {
-     "skuName": "iPhone 15 Pro - 128GB",
-     "productGroup": "Smartphones",
-     "length": 14.7,
-     "width": 7.2,
-     "height": 0.8,
-     "weight": 0.19,
-     "isHazardous": false,
-     "trackingLevel": "EACH",
-     "isSellerSKU": true,
-     "packingConfiguration": {
-       "packConfigName": "Standard Box Pack",
-       "tagVolume": 1.2,
-       "eachVolume": 0.3,
-       "trackingLevel1": "EACH",
-       "trackingLevel2": "BOX",
-       "trackingLevel3": "PALLET",
-       "trackingLevel1To2Ratio": 10,
-       "trackingLevel2To3Ratio": 50
+   "variants": [
+     {
+       "variantId": "VAR-CHOC-100G",
+       "quantity": 100,
+       "uom": "GRAM",
+       "flavor": "Original",
+       "communityPrice": 4.49,
+       "retailPrice": 5.99
+     },
+     {
+       "variantId": "VAR-CHOC-200G",
+       "quantity": 200,
+       "uom": "GRAM",
+       "flavor": "Vanilla Infused",
+       "communityPrice": 8.49,
+       "retailPrice": 9.99
      }
-   }
+   ]
  }
 
 

@@ -55,7 +55,7 @@ public class InventoryQueryService {
         InventoryDocumentDto dto = new InventoryDocumentDto();
         dto.setInventoryId(inventoryDocument.getInventoryId());
         dto.setSkuId(inventoryDocument.getSkuId());
-        dto.setProductId(inventoryDocument.getProductId());
+        //dto.setProductId(inventoryDocument.getProductId());
         dto.setSellerId(inventoryDocument.getSellerId());
         dto.setStoreId(inventoryDocument.getStoreId());
         dto.setOwnerId(inventoryDocument.getOwnerId());
@@ -86,40 +86,10 @@ public class InventoryQueryService {
         dto.setLastStockCheckDate(inventoryDocument.getLastStockCheckDate());
         dto.setLastCycleCountDate(inventoryDocument.getLastCycleCountDate());
 
-        // Denormalized Product Details
-        dto.setProductName(inventoryDocument.getProductName());
-        dto.setProductBrand(inventoryDocument.getProductBrand());
-        dto.setProductDescription(inventoryDocument.getProductDescription());
-        dto.setProductHashKeys(inventoryDocument.getProductHashKeys());
-        dto.setProductIsSeasonal(inventoryDocument.isProductIsSeasonal());
-        dto.setProductPrice(inventoryDocument.getProductPrice());
-        dto.setProductMRP_Price(inventoryDocument.getProductMRP_Price());
-        dto.setProductIs_in_stock(inventoryDocument.isProductIs_in_stock());
-        dto.setProductShippingTrackingLevel(inventoryDocument.getProductShippingTrackingLevel());
-        dto.setProductFrequency(inventoryDocument.getProductFrequency());
-        dto.setProductStoreTrackingLevel(inventoryDocument.getProductStoreTrackingLevel());
-        dto.setProductCaptureExpiryDuringCreateInventory(inventoryDocument.isProductCaptureExpiryDuringCreateInventory());
-
-        // Denormalized SKU Details
-        dto.setSkuName(inventoryDocument.getSkuName());
-        dto.setSkuProductGroup(inventoryDocument.getSkuProductGroup());
-        dto.setSkuLength(inventoryDocument.getSkuLength());
-        dto.setSkuWidth(inventoryDocument.getSkuWidth());
-        dto.setSkuHeight(inventoryDocument.getSkuHeight());
-        dto.setSkuWeight(inventoryDocument.getSkuWeight());
-        dto.setSkuIsHazardous(inventoryDocument.getSkuIsHazardous());
-        dto.setSkuTrackingLevel(inventoryDocument.getSkuTrackingLevel());
-        dto.setSkuIsSellerSKU(inventoryDocument.getSkuIsSellerSKU());
-        dto.setSkuUomWeight(inventoryDocument.getSkuUomWeight());
-        dto.setSkuUomVolume(inventoryDocument.getSkuUomVolume());
-        dto.setSkuUomLength(inventoryDocument.getSkuUomLength());
-        dto.setSkuUomDimension(inventoryDocument.getSkuUomDimension());
-        dto.setSkuState(inventoryDocument.getSkuState());
-        dto.setSkuPackingTrackingLevel(inventoryDocument.getSkuPackingTrackingLevel());
-        dto.setSkuShippingTrackingLevel(inventoryDocument.getSkuShippingTrackingLevel());
+       dto.setProduct(inventoryDocument.getProduct());
+        //dto.setSku(inventoryDocument.getSku());
 
         // Denormalized PackConfiguration Details
-        dto.setPackingConfiguration(inventoryDocument.getPackingConfiguration());
 
         return dto;
     }

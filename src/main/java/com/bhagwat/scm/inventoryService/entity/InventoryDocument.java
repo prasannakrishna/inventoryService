@@ -21,19 +21,19 @@ public class InventoryDocument {
     private Long inventoryId;
 
     // --- Core Inventory Attributes ---
-    private Long skuId; // ID for direct reference
-    private Long productId; // ID for direct reference
-    private Long sellerId; // ID for direct reference
-    private Long storeId; // ID for direct reference
-    private Long ownerId; // ID for direct reference
-    private Long clientId; // ID for direct reference
+    private Long skuId;
+    private String productId;
+    private Long sellerId;
+    private Long storeId;
+    private Long ownerId;
+    private Long clientId;
 
     private String locationId;
     private Integer quantity;
     private Integer allocatedQuantity;
     private Double pricePerUnit;
-    private String currency; // Stored as String from enum
-    private String unitTrackingLevel; // Stored as String from enum
+    private String currency;
+    private String unitTrackingLevel;
 
     // --- Tracking & Traceability Attributes ---
     private String containerId;
@@ -48,8 +48,8 @@ public class InventoryDocument {
     private String receiptId;
     private String origin;
     private String inventoryCode;
-    private String inventoryType; // Stored as String from enum
-    private String inventoryStatus; // Stored as String from enum
+    private String inventoryType;
+    private String inventoryStatus;
     private LocalDate expiryDate;
 
     // --- Auditing Timestamps ---
@@ -59,15 +59,10 @@ public class InventoryDocument {
     private Instant lastCycleCountDate;
 
     // --- Denormalized Product Details ---
-    // Embedding key Product attributes directly for query efficiency
-   private Product product;
+    // Per your request, the full Product object is now embedded.
+    private Product product;
 
-    // --- Denormalized SKU Details ---
-    // Embedding key SKU attributes directly for query efficiency
-    private SKU sku;
+    private boolean reserved_for_community_orders;
 
-
-    // --- Denormalized PackConfiguration Details (from SKU) ---
-    // Embedding the full PackConfiguration object as it's a nested detail of SKU
-    private PackConfiguration packingConfiguration;
+    private ProductVariant productVariant;
 }

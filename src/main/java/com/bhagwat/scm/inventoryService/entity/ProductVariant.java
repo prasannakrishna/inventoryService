@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name = "product_variants")
@@ -15,6 +14,9 @@ import org.springframework.data.annotation.Id;
 @Builder
 public class ProductVariant {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "variant_id", length = 50)
     private String variantId;
 
@@ -31,9 +33,7 @@ public class ProductVariant {
     @Column(name = "flavor", length = 50)
     private String flavor; // e.g., "mango", "lemon"
 
-    @Column(name = "price")
-    private double price;
+    private double communityPrice;
+    private double retailPrice;
 
-    @Column(name = "sku_id", unique = true, nullable = false)
-    private String skuId; // unique identifier for inventory tracking
 }

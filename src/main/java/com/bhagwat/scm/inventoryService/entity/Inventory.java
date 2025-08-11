@@ -125,4 +125,8 @@ public class Inventory {
     }
 
     private boolean reserved_for_community_orders;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "variant_id")
+    private ProductVariant productVariant;
 }

@@ -15,6 +15,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.NoSuchElementException;
+
 @RequiredArgsConstructor
 @Transactional
 @Service
@@ -43,7 +45,12 @@ public class InventoryCommandService {
 
         Product product = productRepository.findById(inventoryDto.getProductId())
                 .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + inventoryDto.getProductId()));
-
+        if(inventoryDto.getProductVariantDTO() != null){
+            ProductVariant productVariant = product.getVariants().stream()
+                    .filter(variant -> variant.getVariantId().equals(inventoryDto.getProductVariantDTO().getVariantId()))
+                    .findFirst()
+                    .orElseThrow(() -> new NoSuchElementException("ProductVariant not found with id: " + inventoryDto.getProductVariantDTO().getVariantId() + " for product: " + inventoryDto.getProductId()));
+        }
 
         Inventory inventory = new Inventory();
         // Map DTO to Entity (consider using MapStruct here)

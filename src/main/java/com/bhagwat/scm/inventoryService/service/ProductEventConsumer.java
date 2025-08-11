@@ -62,7 +62,7 @@ public class ProductEventConsumer {
         productDocument.set_in_stock(product.is_in_stock());
         productDocument.setDescription(product.getDescription());
         productDocument.setSku(sku);
-        productDocument.setPackingConfiguration(packConfiguration);
+        //productDocument.setPackingConfiguration(packConfiguration);
         productDocument.setBrand(product.getBrand());
         productDocument.setMRP_Price(product.getMRP_Price());
         productDocument.setPrice(product.getPrice());
