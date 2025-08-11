@@ -75,7 +75,6 @@ public class SkuEventConsumer {
      * @return A new SKUDocument instance.
      */
     private SKUDocument createSkuDocument(SKU sku, PackConfiguration packConfiguration) {
-        PackConfiguration packConfiguration1 = new PackConfiguration();
         SKUDocument skuDocument = new SKUDocument();
         skuDocument.setSkuId(sku.getSkuId());
         skuDocument.setSkuName(sku.getSkuName());
@@ -87,7 +86,7 @@ public class SkuEventConsumer {
         skuDocument.setIsHazardous(sku.getIsHazardous());
         skuDocument.setTrackingLevel(sku.getTrackingLevel());
         skuDocument.setIsSellerSKU(sku.getIsSellerSKU());
-        skuDocument.setPackingConfiguration(packConfiguration1);
+        skuDocument.setPackingConfiguration(packConfiguration);
         if(sku.getSellerId() != null)
             skuDocument.setSellerId(Long.valueOf(sku.getSellerId()));
         skuDocument.setUomWeight(sku.getUomWeight());

@@ -58,7 +58,7 @@ public class ProductQueryService {
         ProductDocumentDto dto = new ProductDocumentDto();
         dto.setProductId(productDocument.getProductId());
         dto.setSellerId(productDocument.getSellerId());
-        dto.setSkuId(productDocument.getSkuId());
+       /* dto.setSkuId(productDocument.getSkuId());
         dto.setSkuName(productDocument.getSkuName());
         dto.setSkuProductGroup(productDocument.getSkuProductGroup());
         dto.setSkuLength(productDocument.getSkuLength());
@@ -75,7 +75,7 @@ public class ProductQueryService {
         dto.setSkuUomDimension(productDocument.getSkuUomDimension());
         dto.setSkuState(productDocument.getSkuState());
         dto.setSkuPackingTrackingLevel(productDocument.getSkuPackingTrackingLevel());
-        dto.setSkuShippingTrackingLevel(productDocument.getSkuShippingTrackingLevel());
+        dto.setSkuShippingTrackingLevel(productDocument.getSkuShippingTrackingLevel());*/
         dto.setPackingConfiguration(productDocument.getPackingConfiguration());
         dto.setProductName(productDocument.getProductName());
         dto.setBrand(productDocument.getBrand());

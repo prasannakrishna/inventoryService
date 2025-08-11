@@ -13,6 +13,6 @@ public class UnitOfMeasureConverter implements AttributeConverter<UnitOfMeasure,
 
     @Override
     public UnitOfMeasure convertToEntityAttribute(String dbData) {
-        return dbData != null ? UnitOfMeasure.valueOf(dbData): null;
+        return dbData != null ? UnitOfMeasure.fromCode(dbData): null;
     }
 }

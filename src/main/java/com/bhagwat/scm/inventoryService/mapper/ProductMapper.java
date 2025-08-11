@@ -37,7 +37,7 @@ public class ProductMapper {
 
         // Denormalize SKU details
         if (sku != null) {
-            doc.setSkuId(sku.getSkuId());
+           /* doc.setSkuId(sku.getSkuId());
             doc.setSkuName(sku.getSkuName());
             doc.setSkuProductGroup(sku.getProductGroup());
             doc.setSkuLength(sku.getLength());
@@ -55,7 +55,7 @@ public class ProductMapper {
             doc.setSkuUomDimension(sku.getUomDimension());
             doc.setSkuState(sku.getSkuState());
             doc.setSkuPackingTrackingLevel(sku.getPacking_tracking_level());
-            doc.setSkuShippingTrackingLevel(sku.getShipping_tracking_level());
+            doc.setSkuShippingTrackingLevel(sku.getShipping_tracking_level());*/
         }
 
         // Embed PackConfiguration directly

@@ -3,6 +3,7 @@ package com.bhagwat.scm.inventoryService.entity;
 import com.bhagwat.scm.inventoryService.constant.CalendarUnit;
 import com.bhagwat.scm.inventoryService.constant.CountFrequency;
 import com.bhagwat.scm.inventoryService.constant.TrackingLevel;
+import com.bhagwat.scm.inventoryService.converter.TrackingLevelConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -45,28 +46,46 @@ public class Product {
 
     @JdbcTypeCode(SqlTypes.JSON) // Maps Map to JSONB in PostgreSQL
     @Column(name = "hash_keys", columnDefinition = "jsonb")
-    private Map<String, String> hashKeys = new HashMap<>();
+    private Set<String> hashKeys = new HashSet<>();
 
+    @Column(name = "is_seasonal")
     private boolean isSeasonal;
 
+    @Column(name = "price")
     private double price;
+
+    @Column(name = "mrp_price")
     private double mRP_Price;
 
+    @Column(name = "is_in_stock")
     private boolean is_in_stock;
 
+    @Column(name = "community_price")
     private double communityPrice;
+
+    @Column(name = "retail_price")
     private double retailPrice;
 
     // it will be used when seller directly sells goods to community without mediator
     @Enumerated(EnumType.STRING)
+    @Column(name = "allowed_subscription_type")
     private Set<CalendarUnit> allowed_subscription_type;
 
+    @Column(name = "shipping_tracking_level")
+    @Convert(converter = TrackingLevelConverter.class)
     private TrackingLevel shipping_tracking_level;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "frequency")
     private CountFrequency frequency;
 
+    @Convert(converter = TrackingLevelConverter.class)
+    @Column(name = "store_tracking_level")
     private TrackingLevel store_tracking_level;
 
+    @Column(name = "capture_expiry_during_create_inventory")
     private boolean captureExpiryDuringCreateInventory;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Set<ProductVariant> variants = new HashSet<>();
 }

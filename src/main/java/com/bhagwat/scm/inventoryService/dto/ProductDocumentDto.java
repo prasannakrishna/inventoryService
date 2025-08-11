@@ -8,6 +8,7 @@ import com.bhagwat.scm.inventoryService.entity.PackConfiguration;
 import lombok.Data;
 
 import java.util.Map;
+import java.util.Set;
 
 @Data
 public class ProductDocumentDto {
@@ -42,7 +43,7 @@ public class ProductDocumentDto {
     private String productName;
     private String brand;
     private String description;
-    private Map<String, String> hashKeys;
+    private Set<String> hashKeys;
     private boolean isSeasonal;
     private double price;
     private double mRP_Price;

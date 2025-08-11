@@ -54,4 +54,5 @@ public class InventoryDto {
     private String inventoryType; // Send as String, convert to enum in service
     private String inventoryStatus; // Send as String, convert to enum in service
     private LocalDate expiryDate;
+    private ProductVariantDTO productVariantDTO;
 }

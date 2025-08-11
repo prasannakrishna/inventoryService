@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Map; // For Product's hashKeys
+import java.util.Set;
 
 /**
  * MongoDB Document representing a denormalized view of an Inventory item.
@@ -59,37 +60,12 @@ public class InventoryDocument {
 
     // --- Denormalized Product Details ---
     // Embedding key Product attributes directly for query efficiency
-    private String productName;
-    private String productBrand;
-    private String productDescription;
-    private Map<String, String> productHashKeys;
-    private boolean productIsSeasonal;
-    private double productPrice;
-    private double productMRP_Price;
-    private boolean productIs_in_stock;
-    private String productShippingTrackingLevel; // Stored as String from enum
-    private String productFrequency; // Stored as String from enum
-    private String productStoreTrackingLevel; // Stored as String from enum
-    private boolean productCaptureExpiryDuringCreateInventory;
+   private Product product;
 
     // --- Denormalized SKU Details ---
     // Embedding key SKU attributes directly for query efficiency
-    private String skuName;
-    private String skuProductGroup;
-    private Double skuLength;
-    private Double skuWidth;
-    private Double skuHeight;
-    private Double skuWeight;
-    private Boolean skuIsHazardous;
-    private String skuTrackingLevel; // Stored as String from enum
-    private Boolean skuIsSellerSKU;
-    private String skuUomWeight; // Stored as String from enum
-    private String skuUomVolume; // Stored as String from enum
-    private String skuUomLength; // Stored as String from enum
-    private String skuUomDimension; // Stored as String from enum
-    private String skuState; // Stored as String from enum
-    private String skuPackingTrackingLevel; // Stored as String from enum
-    private String skuShippingTrackingLevel; // Stored as String from enum
+    private SKU sku;
+
 
     // --- Denormalized PackConfiguration Details (from SKU) ---
     // Embedding the full PackConfiguration object as it's a nested detail of SKU

@@ -6,6 +6,7 @@ import lombok.Data;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Map;
+import java.util.Set;
 
 @Data
 public class InventoryDocumentDto {
@@ -51,7 +52,7 @@ public class InventoryDocumentDto {
     private String productName;
     private String productBrand;
     private String productDescription;
-    private Map<String, String> productHashKeys;
+    private Set<String> productHashKeys;
     private boolean productIsSeasonal;
     private double productPrice;
     private double productMRP_Price;

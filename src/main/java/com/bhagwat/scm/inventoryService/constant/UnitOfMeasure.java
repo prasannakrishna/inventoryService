@@ -47,4 +47,15 @@ public enum UnitOfMeasure { // Weight Units
     public enum UnitType {
         WEIGHT, VOLUME, LENGTH
     }
+    public static UnitOfMeasure fromCode(String code) {
+        if (code == null) {
+            return null;
+        }
+        for (UnitOfMeasure uom : UnitOfMeasure.values()) {
+            if (uom.getCode().equalsIgnoreCase(code)) {
+                return uom;
+            }
+        }
+        throw new IllegalArgumentException("Unknown UnitOfMeasure code: " + code);
+    }
 }

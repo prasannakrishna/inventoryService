@@ -1,9 +1,12 @@
 package com.bhagwat.scm.inventoryService.dto;
 
+import com.bhagwat.scm.inventoryService.constant.CalendarUnit;
 import com.bhagwat.scm.inventoryService.constant.CountFrequency;
 import com.bhagwat.scm.inventoryService.constant.TrackingLevel;
+import com.bhagwat.scm.inventoryService.entity.ProductVariant;
 import lombok.Data;
 
+import java.util.HashSet;
 import java.util.Map;
 
 import jakarta.validation.constraints.NotBlank;
@@ -11,6 +14,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * DTO for creating or updating a Product.
@@ -21,7 +25,7 @@ public class ProductDTO {
 
     @NotBlank(message = "Product ID is required")
     @Size(min = 1, max = 50)
-    private String productId; // Product ID is part of the DTO for create/update
+    private String productId;
 
     @NotBlank(message = "Seller ID is required")
     @Size(min = 1, max = 50)
@@ -39,20 +43,36 @@ public class ProductDTO {
 
     private String description;
 
-    private Map<String, String> hashKeys = new HashMap<>();
+    // Correctly defined as a Set of Strings to match the entity
+    private Set<String> hashKeys;
 
     private boolean isSeasonal;
 
     private double price;
-    private double mRP_Price;
 
-    private boolean is_in_stock;
+    // Renamed to follow standard camelCase convention
+    private double mrpPrice;
 
-    private TrackingLevel shipping_tracking_level;
+    // Renamed to follow standard camelCase convention
+    private boolean isInStock;
+
+    // Added missing fields from the entity
+    private double communityPrice;
+    private double retailPrice;
+
+    // Added missing field from the entity, using camelCase
+    private Set<CalendarUnit> allowedSubscriptionType;
+
+    // Renamed to follow standard camelCase convention
+    private TrackingLevel shippingTrackingLevel;
 
     private CountFrequency frequency;
 
-    private TrackingLevel store_tracking_level;
+    // Renamed to follow standard camelCase convention
+    private TrackingLevel storeTrackingLevel;
 
+    // Renamed to follow standard camelCase convention
     private boolean captureExpiryDuringCreateInventory;
+    private Set<ProductVariant> variants;
+
 }

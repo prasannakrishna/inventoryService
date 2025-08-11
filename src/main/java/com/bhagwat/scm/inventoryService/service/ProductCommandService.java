@@ -7,7 +7,6 @@ import com.bhagwat.scm.inventoryService.entity.SKU;
 import com.bhagwat.scm.inventoryService.event.ProductCreatedEvent;
 import com.bhagwat.scm.inventoryService.event.ProductDeletedEvent;
 import com.bhagwat.scm.inventoryService.event.ProductUpdatedEvent;
-import com.bhagwat.scm.inventoryService.mapper.ProductMapper;
 import com.bhagwat.scm.inventoryService.repository.PackingConfigurationRepository;
 import com.bhagwat.scm.inventoryService.repository.ProductRepository;
 import com.bhagwat.scm.inventoryService.repository.SkuRepository;
@@ -51,11 +50,11 @@ public class ProductCommandService {
         product.setHashKeys(productDto.getHashKeys());
         product.setSeasonal(productDto.isSeasonal());
         product.setPrice(productDto.getPrice());
-        product.setMRP_Price(productDto.getMRP_Price());
-        product.set_in_stock(productDto.is_in_stock());
-        product.setShipping_tracking_level(productDto.getShipping_tracking_level());
+        product.setMRP_Price(productDto.getMrpPrice());
+        product.set_in_stock(productDto.isInStock());
+        product.setShipping_tracking_level(productDto.getShippingTrackingLevel());
         product.setFrequency(productDto.getFrequency());
-        product.setStore_tracking_level(productDto.getStore_tracking_level());
+        product.setStore_tracking_level(productDto.getStoreTrackingLevel());
         product.setCaptureExpiryDuringCreateInventory(productDto.isCaptureExpiryDuringCreateInventory());
         // inventoryLinks are managed separately or initialized by default in entity
 
@@ -101,11 +100,11 @@ public class ProductCommandService {
         existingProduct.setHashKeys(productDto.getHashKeys());
         existingProduct.setSeasonal(productDto.isSeasonal());
         existingProduct.setPrice(productDto.getPrice());
-        existingProduct.setMRP_Price(productDto.getMRP_Price());
-        existingProduct.set_in_stock(productDto.is_in_stock());
-        existingProduct.setShipping_tracking_level(productDto.getShipping_tracking_level());
+        existingProduct.setMRP_Price(productDto.getMrpPrice());
+        existingProduct.set_in_stock(productDto.isInStock());
+        existingProduct.setShipping_tracking_level(productDto.getShippingTrackingLevel());
         existingProduct.setFrequency(productDto.getFrequency());
-        existingProduct.setStore_tracking_level(productDto.getStore_tracking_level());
+        existingProduct.setStore_tracking_level(productDto.getStoreTrackingLevel());
         existingProduct.setCaptureExpiryDuringCreateInventory(productDto.isCaptureExpiryDuringCreateInventory());
 
         Product updatedProduct = productRepository.save(existingProduct);

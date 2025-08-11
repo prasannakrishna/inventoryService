@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * MongoDB Document representing a denormalized view of a Product,
@@ -22,25 +23,7 @@ public class ProductDocument {
 
     private String sellerId;
 
-    // Denormalized SKU details
-    private Long skuId; // From SKU entity
-    private String skuName; // From SKU entity
-    private String skuProductGroup; // From SKU entity
-    private Double skuLength; // From SKU entity
-    private Double skuWidth; // From SKU entity
-    private Double skuHeight; // From SKU entity
-    private Double skuWeight; // From SKU entity
-    private Boolean skuIsHazardous; // From SKU entity
-    private TrackingLevel skuTrackingLevel; // From SKU entity
-    private Boolean skuIsSellerSKU; // From SKU entity
-    private Long skuSellerPartyId; // From SKU's seller Party entity
-    private UnitOfMeasure skuUomWeight; // From SKU entity
-    private UnitOfMeasure skuUomVolume; // From SKU entity
-    private UnitOfMeasure skuUomLength; // From SKU entity
-    private UnitOfMeasure skuUomDimension; // From SKU entity
-    private SkuState skuState; // From SKU entity
-    private TrackingLevel skuPackingTrackingLevel; // From SKU entity
-    private TrackingLevel skuShippingTrackingLevel; // From SKU entity
+    private SKU sku;
 
     // Denormalized PackConfiguration details
     private PackConfiguration packingConfiguration; // Full embedded object
@@ -49,7 +32,7 @@ public class ProductDocument {
     private String productName;
     private String brand;
     private String description;
-    private Map<String, String> hashKeys;
+    private Set<String> hashKeys;
     private boolean isSeasonal;
     private double price;
     private double mRP_Price;
@@ -58,4 +41,6 @@ public class ProductDocument {
     private CountFrequency frequency;
     private TrackingLevel store_tracking_level;
     private boolean captureExpiryDuringCreateInventory;
+    private double retailPrice;
+    private double communityPrice;
 }
