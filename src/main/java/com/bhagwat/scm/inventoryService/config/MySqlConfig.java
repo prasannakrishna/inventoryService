@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.example.inventory.repository.command")
-@EntityScan(basePackages = "com.example.inventory.entity")
+@EnableJpaRepositories(basePackages = "com.bhagwat.scm.inventoryService.repository")
+@EntityScan(basePackages = "com.bhagwat.scm.inventoryService.entity")
 public class MySqlConfig {
 }
